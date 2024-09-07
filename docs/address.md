@@ -117,20 +117,63 @@ Endpoints : `GET` /api/contacts/:contactId/addresses
 
 Headers : `Authorizaton: token`
 
-Query params :
-
-> id :
-
-> name :
-
-> user:
-
 Headers:
 
 - Authorization: token
 
+### Response Body Success
+
 ```json
-{}
+{
+	"data": [
+		{
+			"id": 1,
+			"street": "jalan binjai",
+			"city": "medan",
+			"province": "sumatera utara",
+			"country": "indonesia",
+			"postalCode": "23232"
+		},
+		{
+			"id": 1,
+			"street": "jalan durian",
+			"city": "kuala lumpur",
+			"province": "johor",
+			"country": "malaysia",
+			"postalCode": "4332"
+		}
+	]
+}
+```
+
+### Response Body Errors
+
+```json
+{
+	"errors": "Adresses is empty"
+}
 ```
 
 ## Remove Address Api
+
+Endpoints : `DELETE` /api/contacts/:contactId/addresses/:addressesId
+
+Headers :
+
+- Authorization : token
+
+### Response Body Success :
+
+```json
+{
+	"data": "ok"
+}
+```
+
+### Response Body Errors :
+
+```json
+{
+	"errors": "Address id is not found"
+}
+```
