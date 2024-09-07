@@ -1,5 +1,5 @@
-import { PrismaClient } from "@prisma/client"
-import { logger } from "./logging.js"
+const PrismaClient = require("@prisma/client")
+const logger = require("./logging.js")
 
 export const prisma = new PrismaClient({
     log: [

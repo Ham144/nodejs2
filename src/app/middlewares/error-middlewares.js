@@ -12,11 +12,6 @@ const errorMiddleware = async (err, req, res, next) => {
             errors: err.message
         }).end()
     }
-    else if (err instanceof ValidationError) {
-        res.status(400).json({
-            errors: err.message
-        }).end()
-    }
     else {
         res.status(500).json({
             errors: err.message
